@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         password= (EditText)findViewById(R.id.editTextPassword);
         attempts= (TextView)findViewById(R.id.incorrectInfo);
         login= (Button)findViewById(R.id.loginButton);
-        attempts.setText("No of attempts remaining: 5");
+        attempts.setText("Number of attempts remaining: 5");
 
         //We need the method validationCheck to work when
         // the login button is clicked so we need OnClickListener
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         //if it doesn't match, decrement the number of 5 wrong attempts
         else {
             counter--;
-            attempts.setText("No of attempts remaining: " + String.valueOf(counter));
+            attempts.setText("Number of attempts remaining: " + String.valueOf(counter));
             if(counter == 0){
                 //the user will not be able to log in after 5 wrong attempts
                 login.setEnabled(false);
