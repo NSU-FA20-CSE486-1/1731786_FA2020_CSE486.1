@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">LogInScreen</string>
+    <string name="user_name_label">Enter your username</string>
+    <string name="password_label1">Password</string>
+    <string name="log_in_label">Log in</string>
+    <string name="incorrect_info_label">Number of incorrect attempts: </string>
+    <string name="text_view_second_Activity_label">Congratz! This is Second Activity. HII!</string>
+    <string name="logo_image" />
+
+</resources>
