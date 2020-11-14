@@ -17,6 +17,6 @@ public class SecondActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         message = (TextView)findViewById(R.id.textViewSecondActivity);
         message2 = getIntent().getStringExtra("Keyname");
-        message.setText("Hi, " +message2+ ", Welcome back!");
+        message.setText("Hi! " +message2+ ", Welcome back!");
     }
 }
