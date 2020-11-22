@@ -37,12 +37,12 @@ public class MainActivity extends AppCompatActivity {
         // the login button is clicked so we need OnClickListener
 
         login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                validationCheck(name.getText().toString(), password.getText().toString());
-            }
-        });
-    }
+        @Override
+        public void onClick(View v) {
+            validationCheck(name.getText().toString(), password.getText().toString());
+        }
+    });
+}
 
 
     //checks the username and password
