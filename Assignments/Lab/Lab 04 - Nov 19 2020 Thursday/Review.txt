@@ -13,5 +13,58 @@ When an activity returns (example sending a reply back to the main activity) it 
 We setResult instead of starting activity(from the replying end). setResult takes in two parameters RESULT_CODE, data/message/reply(in this case).
 Then we use the finish method and this will take us back to the main activity because of the child and parent relationship. (WEW!)
 
-In the mainActivity (the sender end) we need anoother public constant to identify the key for a specific kind of response. 
+In the mainActivity (the sender end) we need another public constant to identify the key for a specific kind of response. 
 When you get a response back from an activity or applications, they could be of different types.
+
+
+If we expect a repone after sending a message we no longer use startActivity after creating the intent to launch the receiving activity.
+Instead, we create startActivityforResult. What this does is, it is setting up the response and call to launch the second activity saying we expect a result. 
+In order to do that we send the REQUESTCODE and the intent name as the parameters of the startActivityForResult. 
+
+
+"The requestCode helps you to identify from which Intent you came back. For example, imagine your Activity A (Main Activity) could call Activity B (Camera Request), Activity C (Audio Recording), Activity D (Select a Contact).
+
+Whenever the subsequently called activities B, C or D finish and need to pass data back to A, now you need to identify in your onActivityResult from which Activity you are returning from and put your handling logic accordingly."
+
+To get the RESULT we are going to override a method called, onActivityResult(int REQUESTCODE, int RESULtCODE, intent data).
+
+" public static final int CAMERA_REQUEST = 1;
+    public static final int CONTACT_VIEW = 2;
+
+    @Override
+    public void onCreate(Bundle savedState)
+    {
+        super.onCreate(savedState);
+        // For CameraRequest you would most likely do
+        Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(cameraIntent, CAMERA_REQUEST);
+
+        // For ContactReqeuest you would most likely do
+        Intent contactIntent = new Intent(ACTION_VIEW, Uri.parse("content://contacts/people/1"));
+        startActivityForResult(contactIntent, CONTACT_VIEW);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        if (resultCode == Activity.RESULT_CANCELED) {
+            // code to handle cancelled state
+        }
+        else if (requestCode == CAMERA_REQUEST) {
+            // code to handle data from CAMERA_REQUEST
+        }
+        else if (requestCode == CONTACT_VIEW) {
+            // code to handle data from CONTACT_VIEW
+        }
+    }
+" from stackOverflow. 
+
+
+Summary:
+
+We changed our start activity to start activity for result and we pass in this request code which is unique value the reason we do that is that if I open an intent and I launch an activity I want to know which activity is coming back and because I launched it
+with this unique code which is just a number, I know that oh this is the one that I'm expecting because I could launch other activities and I could use
+a different constant that could make it easier so that I can say oh this is this is they're returning from entering a text message or they're returning from entering an image or whatever and then we can process it accordingly so that's how that gets used.
+
+
+ 
