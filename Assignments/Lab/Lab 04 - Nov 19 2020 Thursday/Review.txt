@@ -1,0 +1,17 @@
+- An extra is a bundle, that is a key-value pair which is used to add data that is passed from the intent,from one activity to the other activity.
+- When we create a public variable, it is available to any activity in my app. All the activities in my app wwill be able to identify it.
+- For the key name we create a public static final String variable, and set it to "package name (since its always unique) and then add .EXTRA.message (which is unique WITHIN our app)"
+	 Example: public static final string Extra_message = "com.salmaabdulhai.com.logINscreen.EXTRA.message"
+- After creating an intent that starts the next activity, we create an intent in the second activity to get any intent if available when the second activity was launched. 
+	Example: Intent intent = getIntent()
+- In order to get the string from the extras, we need to know what the key is. We have created the unique public constant and now we will assign it to a String varibale to get the data.
+	Example: String message = intent.getStringExtra( MainActivity.Extra_Message). This will pull the id of extra_message from the mainActivity and extract the value and assign it to the message.
+
+
+Intents:
+When an activity returns (example sending a reply back to the main activity) it sends messages like RESULT_OK, RESULT_CANCELLED etc.
+We setResult instead of starting activity(from the replying end). setResult takes in two parameters RESULT_CODE, data/message/reply(in this case).
+Then we use the finish method and this will take us back to the main activity because of the child and parent relationship. (WEW!)
+
+In the mainActivity (the sender end) we need anoother public constant to identify the key for a specific kind of response. 
+When you get a response back from an activity or applications, they could be of different types.
