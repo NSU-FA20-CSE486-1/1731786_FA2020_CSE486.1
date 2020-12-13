@@ -10,6 +10,8 @@
     <string name="am_pm_tv">AM/PM</string>
     <string name="displayDate">Display Date</string>
     <string name="displayTime">Display Time</string>
+    <string name="Confirmation">Confirm</string>
+    <string name="ConfirmedDateAndTime">Confirmed Date and Time</string>
 
     <string-array name="Spinner_year">
         <item>2010</item>
