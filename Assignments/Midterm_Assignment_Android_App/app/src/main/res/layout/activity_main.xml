@@ -9,14 +9,16 @@
 
 
     <EditText
-        android:id="@+id/EnterText_ev"
+        android:id="@+id/EnterKey_ev"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/EnterText"
+        android:layout_marginTop="50dp"
         android:backgroundTint="@color/white"
+        android:ems="10"
+        android:maxLength="03"
+        android:textColorHint="@color/white"
+        android:hint="@string/EnterKey"
+        android:inputType="textPersonName"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -24,31 +26,51 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/EnterKey_ev"
+        android:id="@+id/EnterPhone_ev"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
+        android:layout_marginTop="50dp"
+        android:textColorHint="@color/white"
         android:backgroundTint="@color/white"
         android:ems="10"
+        android:hint="@string/phoneNumber"
         android:inputType="textPersonName"
-        android:text="@string/EnterKey"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EnterKey_ev" />
+
+    <EditText
+        android:id="@+id/EnterText_ev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:hint="@string/EnterText"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/white"
+        android:maxLength="150"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EnterPhone_ev" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="200dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
         android:backgroundTint="@color/white"
         android:text="@string/Encrypt_btn"
         android:textColor="@color/black"
         android:textStyle="bold"
+        android:onClick="encrypt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EnterText_ev"
+        app:layout_constraintVertical_bias="0.159" />
 </androidx.constraintlayout.widget.ConstraintLayout>

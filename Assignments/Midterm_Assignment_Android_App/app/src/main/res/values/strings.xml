@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">Encrypted Text Message App</string>
-    <string name="EnterKey">Enter encryption key</string>
+    <string name="EnterKey">key</string>
     <string name="EnterText">Enter your text here</string>
     <string name="Encrypt_btn">ENCRYPT</string>
+    <string name="encryptedTextView">TextView</string>
+    <string name="send_btn">SEND</string>
+    <string name="phoneNumber">Enter Phone Number</string>
+    <string name="decrypt_text">Decrypted Text (optional)</string>
+    <string name="decrypt_btn">DECRYPT</string>
 </resources>
