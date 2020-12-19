@@ -6,6 +6,7 @@
     <string name="encryptedTextView">TextView</string>
     <string name="send_btn">SEND</string>
     <string name="phoneNumber">Enter Phone Number</string>
-    <string name="decrypt_text">Decrypted Text (optional)</string>
+    <string name="decrypt_text">Paste the garbeled text</string>
     <string name="decrypt_btn">DECRYPT</string>
+    <string name="enter_dec_key">Enter key to decrypt (optional)</string>
 </resources>
