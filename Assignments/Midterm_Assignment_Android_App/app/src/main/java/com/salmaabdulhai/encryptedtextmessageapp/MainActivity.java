@@ -16,6 +16,9 @@ import com.scottyab.aescrypt.AESCrypt;
 import java.security.GeneralSecurityException;
 
 public class MainActivity extends AppCompatActivity {
+
+
+    //declaring the widget objects names
     EditText enterText_et;
     EditText enterKey_et;
     EditText phoneNumber, garbeledText, decKey;
@@ -27,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //initialising the widget object names
         enterKey_et = (EditText) findViewById(R.id.EnterKey_ev);
         enterText_et = (EditText) findViewById(R.id.EnterText_ev);
         phoneNumber = (EditText) findViewById(R.id.EnterPhone_ev);
@@ -38,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    //AES encryption method to encrypt the text user input in the edit text field to send it to the SMS app
+
 
     public void encrypt(View view) {
         try {
@@ -63,6 +70,9 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    //(optional) AES decryption method kept to ensure that the encrypted text can only be decrypted using the key t
+    // that was used to encrypt it.
 
     public void decrypt(View view) {
         try {
