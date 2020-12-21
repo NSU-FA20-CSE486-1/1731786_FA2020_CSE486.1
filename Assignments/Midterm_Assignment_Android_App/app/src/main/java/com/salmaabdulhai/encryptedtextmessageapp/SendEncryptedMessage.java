@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class SendEncryptedMessage extends AppCompatActivity {
+
+    //declaring the widget objects names
     TextView encryptedtText;
     String message, phoneNumber;
     Button send_btn;
@@ -20,6 +22,8 @@ public class SendEncryptedMessage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_send_encrypted_message);
+
+        //initialising the widget object names
         encryptedtText= (TextView) findViewById(R.id.textView);
         send_btn = (Button) findViewById(R.id.button2);
         decrypted_text = (EditText) findViewById(R.id.garbeledText);
@@ -27,6 +31,10 @@ public class SendEncryptedMessage extends AppCompatActivity {
         encryptedtText.setText(message);
 
     }
+
+    //this method opens up the SMS application from the app using the implicit intent
+    //sends the garbled texts to the body of the SMS
+    
 
     public void openSmsApp(View view) {
         phoneNumber = "sms:" + getIntent().getStringExtra("Phone number");
