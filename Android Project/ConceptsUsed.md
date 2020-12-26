@@ -1,3 +1,0 @@
--Recycler view \
--Alert dialog \
--SQL
