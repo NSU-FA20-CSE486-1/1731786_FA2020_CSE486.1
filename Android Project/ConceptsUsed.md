@@ -1,3 +1,3 @@
--Recycler view
--Alert dialog 
-- SQL
+-Recycler view \
+-Alert dialog \
+-SQL
