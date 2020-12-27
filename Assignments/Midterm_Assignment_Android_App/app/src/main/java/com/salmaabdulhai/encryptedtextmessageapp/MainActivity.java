@@ -9,30 +9,42 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.scottyab.aescrypt.AESCrypt;
 
 import java.security.GeneralSecurityException;
 
 public class MainActivity extends AppCompatActivity {
+
+
+    //declaring the widget objects names
     EditText enterText_et;
     EditText enterKey_et;
-    EditText phoneNumber;
+    EditText phoneNumber, garbeledText, decKey;
     Button encrypt_btn;
+    TextView decText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //initialising the widget object names
         enterKey_et = (EditText) findViewById(R.id.EnterKey_ev);
         enterText_et = (EditText) findViewById(R.id.EnterText_ev);
         phoneNumber = (EditText) findViewById(R.id.EnterPhone_ev);
         encrypt_btn = (Button) findViewById(R.id.button);
+        garbeledText = (EditText) findViewById(R.id.garbeledText);
+        decKey = (EditText) findViewById(R.id.enterDecKey);
+        decText = (TextView) findViewById(R.id.decryptedText);
 
 
 
     }
+
+    //AES encryption method to encrypt the text user input in the edit text field to send it to the SMS app
+
 
     public void encrypt(View view) {
         try {
@@ -58,4 +70,23 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+    //(optional) AES decryption method kept to ensure that the encrypted text can only be decrypted using the key t
+    // that was used to encrypt it.
+
+    public void decrypt(View view) {
+        try {
+            String decrypted = AESCrypt.decrypt(decKey.getText().toString(), garbeledText.getText().toString());
+            ClipboardManager clipboardManager = (ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
+            ClipData clipData = ClipData.newPlainText("label",decrypted);
+            clipboardManager.setPrimaryClip(clipData);
+            decText.setText(decrypted);
+
+        } catch (GeneralSecurityException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
 }
