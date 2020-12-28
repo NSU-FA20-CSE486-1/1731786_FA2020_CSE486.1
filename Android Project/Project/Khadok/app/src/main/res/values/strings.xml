@@ -2,4 +2,7 @@
     <string name="app_name">Khadok</string>
     <string name="appName_label">KHADOK</string>
     <string name="Food_description"> with special white sauce and green chiili and onions</string>
+    <string name="place_order">Place Order</string>
+    <string name="total">Total</string>
+    <string name="Taka">TK.</string>
 </resources>
