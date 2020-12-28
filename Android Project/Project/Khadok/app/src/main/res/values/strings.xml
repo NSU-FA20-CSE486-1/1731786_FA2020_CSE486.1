@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Khadok</string>
     <string name="appName_label">KHADOK</string>
+    <string name="Food_description"> with special white sauce and green chiili and onions</string>
 </resources>

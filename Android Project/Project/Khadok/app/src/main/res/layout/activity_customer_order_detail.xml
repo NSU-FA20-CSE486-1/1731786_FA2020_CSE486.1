@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".customer_order_detail"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".customer_order_detail">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -21,10 +21,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/kacchi_biryani" />
+                android:src="@drawable/kacchi_biryani" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/detail_foodName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
@@ -44,14 +44,17 @@
                 android:padding="3dp">
 
                 <ImageView
-                    android:id="@+id/imageView3"
+                    android:id="@+id/add"
                     android:layout_width="20dp"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerInside"
-                    app:srcCompat="@drawable/ic_minus" />
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginRight="5dp"
+                    android:padding="2dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_minus" />
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/quantity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="2dp"
@@ -63,12 +66,35 @@
                     android:textStyle="bold" />
 
                 <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="40dp"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerInside"
-                    app:srcCompat="@drawable/ic_add" />
+                    android:id="@+id/minus"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:padding="1dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_add" />
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/detailDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="9dp"
+            android:gravity="center"
+            android:text="@string/Food_description" />
+
+    </LinearLayout>
 </LinearLayout>
