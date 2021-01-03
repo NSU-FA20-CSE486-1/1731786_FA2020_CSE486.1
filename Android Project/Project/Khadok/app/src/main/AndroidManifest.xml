@@ -9,14 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Khadok">
-        <activity android:name=".googleAddressActivity"></activity>
+
         <activity android:name=".LogIn" />
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".customer_order_detail" />
         <activity android:name=".CustomerOrderActivity" />
         <activity android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".SplashScreen" android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".SplashScreen" android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".googleAddressActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
