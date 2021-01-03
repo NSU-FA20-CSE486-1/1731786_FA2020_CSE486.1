@@ -1,6 +1,10 @@
 package com.salmaabdulhai.khadok;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
@@ -16,6 +20,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
+    private DrawerLayout drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +28,16 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        ArrayList <MainModel> list = new ArrayList<>();
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        drawer = findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+
+
+        ArrayList<MainModel> list = new ArrayList<>();
         list.add(new MainModel(R.drawable.fried_rice, "Fried rice", "255", "with tomatoes and green chillies"));
         list.add(new MainModel(R.drawable.shrimp_salad, "Fried shrimps", "50", "with magic white sauce and fries"));
         list.add(new MainModel(R.drawable.kacchi_biryani, "Kacchi", "780", "mutton with salad and free drinks"));
@@ -35,7 +49,9 @@ public class MainActivity extends AppCompatActivity {
         binding.recyclerview.setLayoutManager(layoutManager);
 
 
+
+
     }
 
-
 }
+
