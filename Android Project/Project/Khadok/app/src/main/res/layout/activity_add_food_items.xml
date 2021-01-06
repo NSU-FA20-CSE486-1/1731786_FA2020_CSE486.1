@@ -11,7 +11,7 @@
     <EditText
         android:id="@+id/itemName"
         android:layout_width="match_parent"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:textColor="@color/black"
@@ -53,18 +53,33 @@
         android:inputType="textPassword" />
 
 
+    <ImageView
+        android:id="@+id/itemImageView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/itemPrice"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_baseline_image_24" />
+
+
+    <Button
+        android:id="@+id/uploadItemImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/itemImageView"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="15dp"
+        android:text="@string/upload_image" />
 
     <Button
         android:id="@+id/itemSubmitBtn"
-        android:layout_width="wrap_content"
-        android:layout_below="@+id/itemPrice"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/uploadItemImage"
         android:layout_centerInParent="true"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:text="@string/submit" />
-
-
-
 
 
 </RelativeLayout>
