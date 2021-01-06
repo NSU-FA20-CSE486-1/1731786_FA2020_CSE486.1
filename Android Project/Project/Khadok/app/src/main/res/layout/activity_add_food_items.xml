@@ -5,52 +5,63 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
-    tools:context=".ChefRegistration">
+    tools:context=".AddFoodItems">
 
 
     <EditText
-        android:id="@+id/outlet"
+        android:id="@+id/itemName"
         android:layout_width="match_parent"
         android:layout_marginTop="50dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:textColor="@color/black"
-        android:hint="Outlet Name"
+        android:hint="Item Name"
         android:inputType="textPersonName"
         />
 
     <EditText
-        android:id="@+id/ChefMobile"
+        android:id="@+id/itemDetail"
         android:layout_width="match_parent"
         android:layout_marginTop="50dp"
         android:textColor="@color/black"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Mobile Number"
-        android:layout_below="@+id/outlet"
+        android:hint="Item Detail"
+        android:layout_below="@+id/itemName"
         android:inputType="textPassword" />
 
     <EditText
-        android:id="@+id/ChefPass"
+        android:id="@+id/FoodCategorySpinner"
         android:layout_width="match_parent"
         android:layout_marginTop="50dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:textColor="@color/black"
-        android:hint="Password"
-        android:layout_below="@+id/ChefMobile"
+        android:hint="Food Category"
+        android:layout_below="@+id/itemDetail"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/itemPrice"
+        android:layout_width="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="@color/black"
+        android:hint="Price"
+        android:layout_below="@+id/FoodCategorySpinner"
         android:inputType="textPassword" />
 
 
 
-        <Button
-            android:id="@+id/ChefSignup_btn"
-            android:layout_width="wrap_content"
-            android:layout_below="@+id/ChefPass"
-            android:layout_centerInParent="true"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:text="@string/sign_up" />
+    <Button
+        android:id="@+id/itemSubmitBtn"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/itemPrice"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="@string/submit" />
 
 
 
