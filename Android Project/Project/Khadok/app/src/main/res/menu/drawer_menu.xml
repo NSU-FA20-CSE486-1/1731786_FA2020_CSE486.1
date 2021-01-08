@@ -6,13 +6,13 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_message"
-            android:title="Message" />
+            android:title="My Orders" />
         <item
             android:id="@+id/nav_chat"
-            android:title="Chat" />
+            android:title="Saved" />
         <item
             android:id="@+id/nav_profile"
-            android:title="Profile" />
+            android:title="Apply as Chef" />
     </group>
     <item android:title="Communicate">
         <menu>
@@ -21,7 +21,7 @@
                 android:title="Share" />
             <item
                 android:id="@+id/nav_send"
-                android:title="Send" />
+                android:title="Log Out" />
         </menu>
     </item>
 
