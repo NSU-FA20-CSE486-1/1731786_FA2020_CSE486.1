@@ -3,12 +3,15 @@ package com.salmaabdulhai.test;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -38,16 +41,18 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.Holder> {
         View v;
         v = LayoutInflater.from(context).inflate(R.layout.english_words, parent, false);
         Holder vHolder= new Holder(v);
-        myDialogue =new Dialog(context);
+        myDialogue= new Dialog(context);
         myDialogue.setContentView(R.layout.dialog_message);
+        myDialogue.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
 
-        vHolder.popup.setOnClickListener(new View.OnClickListener() {
+
+        vHolder.layoutid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                TextView popMess = (TextView) myDialogue.findViewById(R.id.popupMessage);
-                popMess.setText(taskModelList.get(vHolder.getAdapterPosition()).getTaskName());
+                TextView tee = (TextView) myDialogue.findViewById(R.id.popupMessage);
+                tee.setText(taskModelList.get(vHolder.getAdapterPosition()).getTaskName());
+                Toast.makeText(context, "Test" + String.valueOf(vHolder.getAdapterPosition()),Toast.LENGTH_SHORT).show();
                 myDialogue.show();
 
 
@@ -68,12 +73,12 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.Holder> {
     }
 
     public class Holder extends RecyclerView.ViewHolder {
-        TextView txtTaskName;
-        LinearLayout popup;
+        private TextView txtTaskName;
+        private LinearLayout layoutid;
         public Holder(@NonNull View itemView) {
             super(itemView);
             txtTaskName = itemView.findViewById(R.id.txt_task_name);
-            popup = (LinearLayout) itemView.findViewById(R.id.popupid);
+            layoutid = (LinearLayout) itemView.findViewById(R.id.popupid);
         }
     }
 
