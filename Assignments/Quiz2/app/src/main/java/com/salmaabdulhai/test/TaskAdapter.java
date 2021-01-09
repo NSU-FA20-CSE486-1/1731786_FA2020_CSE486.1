@@ -41,23 +41,14 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.Holder> {
         View v;
         v = LayoutInflater.from(context).inflate(R.layout.english_words, parent, false);
         Holder vHolder= new Holder(v);
-        myDialogue= new Dialog(context);
-        myDialogue.setContentView(R.layout.dialog_message);
-        myDialogue.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
 
 
-        vHolder.layoutid.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                TextView tee = (TextView) myDialogue.findViewById(R.id.popupMessage);
-                tee.setText(taskModelList.get(vHolder.getAdapterPosition()).getTaskName());
-                Toast.makeText(context, "Test" + String.valueOf(vHolder.getAdapterPosition()),Toast.LENGTH_SHORT).show();
-                myDialogue.show();
 
+        //myDialogue= new Dialog(context);
+        //myDialogue.setContentView(R.layout.dialog_message);
+        //myDialogue.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
-            }
-        });
 
         return vHolder;
     }
@@ -72,13 +63,28 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.Holder> {
         return taskModelList != null ? taskModelList.size() : 0;
     }
 
-    public class Holder extends RecyclerView.ViewHolder {
+    public class Holder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView txtTaskName;
         private LinearLayout layoutid;
         public Holder(@NonNull View itemView) {
             super(itemView);
+            itemView.setOnClickListener(this);
             txtTaskName = itemView.findViewById(R.id.txt_task_name);
             layoutid = (LinearLayout) itemView.findViewById(R.id.popupid);
+        }
+
+        @Override
+        public void onClick(View v) {
+            TaskModel soemthing = taskModelList.get(getPosition());
+            myDialogue= new Dialog(context);
+            myDialogue.setContentView(R.layout.dialog_message);
+            myDialogue.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+            TextView ss = (TextView) myDialogue.findViewById(R.id.popupMessage);
+            ss.setText(soemthing.getTaskName());
+
+            myDialogue.show();
+
         }
     }
 
