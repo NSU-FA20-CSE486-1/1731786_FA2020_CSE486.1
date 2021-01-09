@@ -2,6 +2,7 @@ package com.salmaabdulhai.test;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -12,8 +13,11 @@ import android.widget.ListView;
 
 import com.google.gson.Gson;
 
+import java.io.Serializable;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     EditText english;
     EditText bangla;
     private ListView listView;
+    private TaskAdapter adapter;
+    private List<TaskModel> taskList;
     private ArrayList<String> arrayList;
     private ArrayAdapter<String> arrayAdapter;
 
@@ -38,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
         arrayAdapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1,arrayList);
         listView.setAdapter(arrayAdapter);
 
+        taskList = PrefConfig.readListFromPref(this);
+
+        if (taskList == null)
+            taskList = new ArrayList<>();
 
 
     }
@@ -46,22 +56,16 @@ public class MainActivity extends AppCompatActivity {
         String result = bangla.getText().toString();
         arrayList.add(result);
         arrayAdapter.notifyDataSetChanged();
-        saveData();
+
     }
-
-    private void saveData() {
-        SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        Gson gson = new Gson();
-        String json = gson.toJson(arrayList);
-        editor.putString("task list", json);
-        editor.apply();
-    }
-
-    
-
 
 
     public void viewDictionary(View view) {
+
+        TaskModel taskModel = new TaskModel(english.getText().toString());
+        taskList.add(taskModel);
+        PrefConfig.writeListInPref(getApplicationContext(), taskList);
+        Intent i = new Intent(MainActivity.this, dictionary.class);
+        startActivity(i);
     }
 }
