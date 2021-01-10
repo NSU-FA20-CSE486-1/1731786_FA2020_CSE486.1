@@ -8,7 +8,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:background="#ff6285"
+        android:background="#9FE91E76"
         android:gravity="center"
         android:orientation="vertical"
         >
@@ -19,8 +19,9 @@
             android:layout_height="wrap_content"
             android:text="TextView"
             android:textStyle="bold"
+            android:fontFamily="cursive"
             android:textColor="@color/white"
-            android:textSize="50sp"
+            android:textSize="90sp"
             android:layout_marginTop="5dp"/>
     </LinearLayout>
 </RelativeLayout>

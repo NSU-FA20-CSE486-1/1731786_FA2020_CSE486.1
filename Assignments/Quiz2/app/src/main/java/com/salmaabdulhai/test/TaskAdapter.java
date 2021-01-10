@@ -25,7 +25,8 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.Holder> {
     private Context context;
     private List<TaskModel> taskModelList;
     private ArrayList<String> englishList;
-    Dialog myDialogue;
+
+    //Dialog myDialogue;
 
 
     public TaskAdapter(Context context, List<TaskModel> taskModelList) {
@@ -57,11 +58,12 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.Holder> {
         holder.layoutid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                englishList = PrefConfig.readListFromPref1(context);
                 AlertDialog.Builder builder = new AlertDialog.Builder(v.getRootView().getContext());
                 View dialogView = LayoutInflater.from(v.getRootView().getContext()).inflate(R.layout.dialog_message, null);
                 TextView dialogText;
                 dialogText = dialogView.findViewById(R.id.popupMessage);
-                dialogText.setText(taskModel.getTaskName());
+                dialogText.setText(englishList.get(position));
                 builder.setView(dialogView);
                 builder.setCancelable(true);
                 builder.show();
