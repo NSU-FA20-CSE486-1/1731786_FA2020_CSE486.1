@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
     public void savebanglaTranslation(View view) {
         String result = bangla.getText().toString();
         arrayList.add(result);
+        PrefConfig.writeListInPref1(getApplicationContext(),arrayList);
         arrayAdapter.notifyDataSetChanged();
 
     }
