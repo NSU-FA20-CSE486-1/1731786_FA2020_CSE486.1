@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.salmaabdulhai.test"
+        applicationId "com.salmaabdulhai.cse486fall2020quiz2"
         minSdkVersion 16
         targetSdkVersion 30
         versionCode 1

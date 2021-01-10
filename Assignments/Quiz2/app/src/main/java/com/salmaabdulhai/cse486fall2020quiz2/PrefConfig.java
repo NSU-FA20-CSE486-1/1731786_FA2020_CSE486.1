@@ -1,4 +1,4 @@
-package com.salmaabdulhai.test;
+package com.salmaabdulhai.cse486fall2020quiz2;
 
 
 import android.content.Context;
