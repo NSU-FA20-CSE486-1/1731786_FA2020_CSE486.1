@@ -51,7 +51,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.Holder> {
     public void onBindViewHolder(@NonNull Holder holder, int position) {
         TaskModel taskModel= taskModelList.get(position);
         holder.txtTaskName.setText(taskModelList.get(position).getTaskName());
-        holder.layoutid.setOnClickListener(new View.OnClickListener() {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 englishList = PrefConfig.readListFromPref1(context);
