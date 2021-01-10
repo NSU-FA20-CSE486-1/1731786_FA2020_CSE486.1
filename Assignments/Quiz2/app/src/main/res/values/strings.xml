@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Test</string>
+    <string name="app_name">Bangla Dictionary</string>
     <string name="english_word">English word</string>
     <string name="bangla_word">Bangla Word</string>
     <string name="save">Save</string>
