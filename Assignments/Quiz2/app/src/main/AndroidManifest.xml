@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Test">
-        <activity android:name="com.salmaabdulhai.cse486fall2020quiz2.dictionary"></activity>
+        <activity android:name="com.salmaabdulhai.cse486fall2020quiz2.dictionary"
+            android:label="@string/activity2"></activity>
         <activity android:name="com.salmaabdulhai.cse486fall2020quiz2.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
