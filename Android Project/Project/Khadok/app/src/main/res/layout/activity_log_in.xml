@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:textColor="@color/black"
-        android:hint="Username"
+        android:hint="Mobile Number"
         android:inputType="textPersonName"
         />
 
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Password"
-        android:layout_below="@+id/username_login"
+        android:layout_below="@+id/mobile_login"
         android:inputType="textPassword" />
 
     <Button
@@ -56,7 +56,7 @@
             android:textColor="@color/black" />
 
         <TextView
-            android:id="@+id/login_tv"
+            android:id="@+id/noAccountSignup"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"

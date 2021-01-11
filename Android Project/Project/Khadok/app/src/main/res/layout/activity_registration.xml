@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:textColor="@color/black"
-        android:hint="Username"
+        android:hint="Mobile Number"
         android:inputType="textPersonName"
         />
 
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Password"
-        android:layout_below="@+id/username_Reg"
+        android:layout_below="@+id/mobile_reg"
         android:inputType="textPassword" />
 
     <EditText
