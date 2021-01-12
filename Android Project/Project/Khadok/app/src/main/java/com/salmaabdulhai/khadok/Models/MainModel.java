@@ -7,10 +7,9 @@ public class MainModel {
     int image;
     String name, price, description;
 
-    public MainModel(int image, String name, String price, String description) {
+    public MainModel(int image, String name, String description) {
         this.image = image;
         this.name = name;
-        this.price = price;
         this.description = description;
     }
 
@@ -28,14 +27,6 @@ public class MainModel {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getPrice() {
-        return price;
-    }
-
-    public void setPrice(String price) {
-        this.price = price;
     }
 
     public String getDescription() {

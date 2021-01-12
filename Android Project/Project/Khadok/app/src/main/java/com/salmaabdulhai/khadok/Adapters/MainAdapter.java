@@ -31,7 +31,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.viewholder> {
 
 
         //Inflate layout
-        View view = LayoutInflater.from(context).inflate(R.layout.sample_customer_dashboard, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.sample_customer_home_chef_fragment, parent, false);
         return new viewholder(view);
     }
 
@@ -39,10 +39,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.viewholder> {
     public void onBindViewHolder(@NonNull viewholder holder, int position) {
         //data bind
         final MainModel model = list.get(position);
-        holder.foodImage.setImageResource(model.getImage());
-        holder.foodName.setText(model.getName());
-        holder.price.setText(model.getPrice());
-        holder.description.setText(model.getDescription());
+        holder.DashboardfoodImage.setImageResource(model.getImage());
+        holder.DashboardfoodName.setText(model.getName());
+        holder.Dashboarddescription.setText(model.getDescription());
 
 
     }
@@ -53,15 +52,13 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.viewholder> {
     }
 
     public class viewholder extends RecyclerView.ViewHolder {
-        ImageView foodImage;
-        TextView foodName, price, description;
+        ImageView DashboardfoodImage;
+        TextView DashboardfoodName, Dashboarddescription;
         public viewholder(@NonNull View itemView) {
             super(itemView);
-            foodImage = (ImageView) itemView.findViewById(R.id.food_image);
-            foodName = (TextView) itemView.findViewById(R.id.foodName);
-            price = (TextView) itemView.findViewById(R.id.price_tv);
-            description = (TextView) itemView.findViewById(R.id.food_description);
+            DashboardfoodImage = (ImageView) itemView.findViewById(R.id.chef_food_image);
+            DashboardfoodName = (TextView) itemView.findViewById(R.id.chefOutletName);
+            Dashboarddescription = (TextView) itemView.findViewById(R.id.chef_bio);
         }
-    }
-    ;
+    };
 }
