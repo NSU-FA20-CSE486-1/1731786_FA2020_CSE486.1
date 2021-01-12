@@ -1,7 +1,10 @@
 package com.salmaabdulhai.khadok;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -32,6 +35,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //first reference the nav view
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        View headerView = navigationView.getHeaderView(0);
+        TextView navUsername = (TextView) headerView.findViewById(R.id.nav_header_mobileId);
+        SharedPreferences preferences = getSharedPreferences("MYPREFS", MODE_PRIVATE);
+        String mobileNumber = preferences.getString("mobileUser", "");
+        navUsername.setText(mobileNumber);
 
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
