@@ -36,7 +36,7 @@
                     android:layout_marginStart="12dp"
                     android:layout_marginLeft="12dp"
                     android:text="Outlet Name"
-                    android:textColor="#000000"
+                    android:textColor="@color/red_700"
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
