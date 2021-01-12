@@ -34,9 +34,13 @@ public class RegistrationActivity extends AppCompatActivity {
                 String newPassword = password.getText().toString();
                 String retypePass = confirmPassword.getText().toString();
 
-                if (!confirmPassword.equals(newPassword)) {
+                if (!retypePass.equals(newPassword)) {
                     Toast.makeText(RegistrationActivity.this, "Wrong! Retype your Password.", Toast.LENGTH_SHORT).show();
-                } else {
+                }
+
+
+
+                else {
 
                     SharedPreferences.Editor editor = preferences.edit();
 

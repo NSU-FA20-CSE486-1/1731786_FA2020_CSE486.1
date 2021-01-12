@@ -26,7 +26,7 @@ public class LogIn extends AppCompatActivity {
 
         logInNumber = (EditText) findViewById(R.id.mobile_login);
         loginPass = (EditText) findViewById(R.id.pass_logIn);
-        logInBtn = (Button) findViewById(R.id.signup_btn);
+        logInBtn = (Button) findViewById(R.id.login_btn);
         signup = (TextView) findViewById(R.id.noAccountSignup);
 
 
@@ -42,13 +42,15 @@ public class LogIn extends AppCompatActivity {
                 String userMobile = preferences.getString("mobileUser", "");
                 String pass = preferences.getString("newPassword", "");
 
-                if (!(mobileUser.equals(userMobile)) && (newPassword.equals(pass))) {
+                if ((!mobileUser.equals(userMobile))|| (!newPassword.equals(pass))) {
                     Toast.makeText(LogIn.this, "Wrong username or password. Try again ", Toast.LENGTH_SHORT).show();
-                } else {
+                }
+
+                else {
 
 
-                    Intent customerOrderActivity = new Intent(LogIn.this, CustomerOrderActivity.class);
-                    startActivity(customerOrderActivity);
+                    Intent mainActivity = new Intent(LogIn.this, MainActivity.class);
+                    startActivity(mainActivity);
                 }
             }
         });

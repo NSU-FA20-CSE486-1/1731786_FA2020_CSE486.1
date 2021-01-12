@@ -57,7 +57,12 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
+        }
+
+        //else, if the drawer is not open and the hard back key is pressed,
+        //the onclick back button will close the activity.
+
+        else {
             super.onBackPressed();
         }
     }
