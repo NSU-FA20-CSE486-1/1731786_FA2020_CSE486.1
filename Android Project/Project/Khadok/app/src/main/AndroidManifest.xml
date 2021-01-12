@@ -17,12 +17,12 @@
         <activity android:name=".customer_order_detail" />
         <activity android:name=".CustomerOrderActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".googleAddressActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".googleAddressActivity">
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
