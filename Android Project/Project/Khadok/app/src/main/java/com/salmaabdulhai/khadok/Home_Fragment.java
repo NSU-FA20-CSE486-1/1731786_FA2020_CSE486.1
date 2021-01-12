@@ -25,7 +25,7 @@ public class Home_Fragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.home_fragment, container,false);
-        recyclerView = (RecyclerView) recyclerView.findViewById(R.id.recyclerview);
+        recyclerView = view.findViewById(R.id.customerchefHomeFrag);
 
         ArrayList<MainModel> list = new ArrayList<>();
         list.add(new MainModel(R.drawable.fried_rice, "William John", "Food heaven right here"));
