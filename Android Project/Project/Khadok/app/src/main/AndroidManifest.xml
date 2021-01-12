@@ -9,8 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Khadok">
-        <activity android:name=".customerHomechefFoodItems"
-            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".chef_dashboard" />
         <activity android:name=".AddFoodItems" />
         <activity android:name=".ChefRegistration" />
