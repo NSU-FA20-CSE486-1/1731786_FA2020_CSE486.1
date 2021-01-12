@@ -1,16 +1,19 @@
 package com.salmaabdulhai.khadok;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.google.android.material.navigation.NavigationView;
 import com.salmaabdulhai.khadok.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     ActivityMainBinding binding;
     private DrawerLayout drawer;
@@ -33,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
         //to handle the click events for the menu in the navigation drawer, we need to
         //first reference the nav view
 
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
 
 
 
@@ -50,6 +56,24 @@ public class MainActivity extends AppCompatActivity {
         else {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+       //return to means no item will be selected but we want it to be selected after we click it.
+        //therefore true.
+
+        switch (item.getItemId()) {
+            case R.id.Home:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new Home_Fragment()).commit();
+                break;
+
+        }
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+
     }
 }
 
