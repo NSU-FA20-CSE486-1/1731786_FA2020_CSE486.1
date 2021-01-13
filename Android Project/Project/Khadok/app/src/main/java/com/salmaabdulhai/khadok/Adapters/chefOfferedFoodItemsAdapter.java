@@ -12,12 +12,15 @@ import com.salmaabdulhai.khadok.Models.chefOfferedFoodItems;
 import com.salmaabdulhai.khadok.R;
 
         import androidx.annotation.NonNull;
-        import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
         import com.salmaabdulhai.khadok.Models.MainModel;
         import com.salmaabdulhai.khadok.R;
+import com.salmaabdulhai.khadok.offered_food_items_fragment;
 
-        import java.util.ArrayList;
+import java.util.ArrayList;
 
 public class chefOfferedFoodItemsAdapter extends RecyclerView.Adapter<chefOfferedFoodItemsAdapter.viewholder> {
 
@@ -46,6 +49,15 @@ public class chefOfferedFoodItemsAdapter extends RecyclerView.Adapter<chefOffere
         holder.offfoodName.setText(model.getOfferedFoodName());
         holder.offprice.setText(model.getOfferedFoodPrice());
         holder.offdescription.setText(model.getOfferedFoodDescription());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AppCompatActivity activity = (AppCompatActivity) v.getContext();
+                Fragment myFragment = new Fragment();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new offered_food_items_fragment()).addToBackStack(null).commit();
+
+            }
+        });
 
 
     }
