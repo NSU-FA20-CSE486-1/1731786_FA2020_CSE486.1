@@ -32,7 +32,6 @@ public class chefOfferedFoodItemsAdapter extends RecyclerView.Adapter<chefOffere
     @NonNull
     @Override
     public viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
 
         //Inflate layout
         View view = LayoutInflater.from(context).inflate(R.layout.sample_customer_dashboard, parent, false);
