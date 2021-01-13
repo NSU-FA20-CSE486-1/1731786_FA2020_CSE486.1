@@ -8,10 +8,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.salmaabdulhai.khadok.Models.MainModel;
 import com.salmaabdulhai.khadok.R;
+import com.salmaabdulhai.khadok.offered_food_items_fragment;
 
 import java.util.ArrayList;
 
@@ -42,6 +45,16 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.viewholder> {
         holder.DashboardfoodImage.setImageResource(model.getImage());
         holder.DashboardfoodName.setText(model.getName());
         holder.Dashboarddescription.setText(model.getDescription());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AppCompatActivity activity = (AppCompatActivity) v.getContext();
+                Fragment myFragment = new Fragment();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new offered_food_items_fragment()).addToBackStack(null).commit();
+
+            }
+        });
+
 
 
     }

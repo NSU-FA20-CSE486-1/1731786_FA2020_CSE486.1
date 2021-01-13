@@ -49,15 +49,6 @@ public class chefOfferedFoodItemsAdapter extends RecyclerView.Adapter<chefOffere
         holder.offfoodName.setText(model.getOfferedFoodName());
         holder.offprice.setText(model.getOfferedFoodPrice());
         holder.offdescription.setText(model.getOfferedFoodDescription());
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AppCompatActivity activity = (AppCompatActivity) v.getContext();
-                Fragment myFragment = new Fragment();
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new offered_food_items_fragment()).addToBackStack(null).commit();
-
-            }
-        });
 
 
     }
