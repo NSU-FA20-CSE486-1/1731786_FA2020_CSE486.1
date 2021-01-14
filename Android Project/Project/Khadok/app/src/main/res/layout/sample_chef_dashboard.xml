@@ -22,7 +22,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/food_image"
+                android:id="@+id/offimage"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -37,12 +37,12 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/foodName"
+                    android:id="@+id/offFoodname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
                     android:layout_marginLeft="12dp"
-                    android:text="Outlet Name"
+                    android:text="food Name"
                     android:textColor="#000000"
                     android:textSize="24sp"
                     android:textStyle="bold" />
@@ -63,7 +63,7 @@
                         android:textColor="#FF0036" />
 
                     <TextView
-                        android:id="@+id/price_tv"
+                        android:id="@+id/offFoodPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Price"
@@ -72,7 +72,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/food_description"
+                    android:id="@+id/offFoodDesc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"

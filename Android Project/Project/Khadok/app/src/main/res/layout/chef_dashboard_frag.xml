@@ -4,27 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
     tools:context=".chef_dashboard">
 
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Show order requests here"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        android:textStyle="bold"
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chefsFood"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:background="#3EE91E63"
+        android:layout_marginBottom="20dp"
+        tools:listitem="@layout/sample_add_food_items"
         />
 
     <Button
         android:id="@+id/dash_add_item"
+        android:layout_below="@+id/chefsFood"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@color/red_500"
         android:text="@string/add_food_items"
         android:textColor="@color/white"
