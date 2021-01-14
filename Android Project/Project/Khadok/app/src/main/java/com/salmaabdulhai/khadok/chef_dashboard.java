@@ -8,6 +8,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -19,6 +21,7 @@ public class chef_dashboard extends Fragment{
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.chef_dashboard_frag, container,false);
+        setHasOptionsMenu(true);
 
         addFoodBtn = view.findViewById(R.id.dash_add_item);
         addFoodBtn.setOnClickListener(new View.OnClickListener() {
@@ -33,5 +36,11 @@ public class chef_dashboard extends Fragment{
             }
         });
         return view;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        menu.clear();
     }
 }

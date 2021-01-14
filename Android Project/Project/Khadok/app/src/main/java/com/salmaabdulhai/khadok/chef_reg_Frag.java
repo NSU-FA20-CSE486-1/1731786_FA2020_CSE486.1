@@ -2,6 +2,8 @@ package com.salmaabdulhai.khadok;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -19,6 +21,8 @@ public class chef_reg_Frag extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.chef_registration_fragment, container,false);
+        //remove the menu option
+        setHasOptionsMenu(true);
         signup_chef = view.findViewById(R.id.ChefSignup_btn);
         signup_chef.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,5 +36,12 @@ public class chef_reg_Frag extends Fragment {
             }
         });
         return view;
+    }
+
+    //remove the menu option
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        menu.clear();
     }
 }
