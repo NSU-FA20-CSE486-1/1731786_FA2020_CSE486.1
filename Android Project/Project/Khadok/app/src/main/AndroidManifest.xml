@@ -14,7 +14,7 @@
         <activity android:name=".ChefReg_Fragment" />
         <activity android:name=".LogIn" />
         <activity android:name=".RegistrationActivity" />
-        <activity android:name=".CustomerOrderActivity" />
+        <activity android:name=".CustomerOrderFragment" />
         <activity
             android:name=".googleAddressActivity"
             android:theme="@style/AppTheme.NoActionBar" />

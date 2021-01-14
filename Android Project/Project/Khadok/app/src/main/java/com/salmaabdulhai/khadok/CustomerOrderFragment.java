@@ -1,28 +1,32 @@
 package com.salmaabdulhai.khadok;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.salmaabdulhai.khadok.Adapters.CustomerOrderAdapter;
-import com.salmaabdulhai.khadok.Adapters.MainAdapter;
 import com.salmaabdulhai.khadok.Models.CustomerOrderModel;
-import com.salmaabdulhai.khadok.Models.MainModel;
-import com.salmaabdulhai.khadok.databinding.ActivityCustomerOrderBinding;
-import com.salmaabdulhai.khadok.databinding.ActivityMainBinding;
+
 
 import java.util.ArrayList;
 
-public class CustomerOrderActivity extends AppCompatActivity {
+public class CustomerOrderFragment extends Fragment {
 
-    ActivityCustomerOrderBinding binding;
+    RecyclerView recyclerView;
 
+
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        binding = ActivityCustomerOrderBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.customer_order_fragment, container,false);
+        recyclerView = view.findViewById(R.id.orderedRecyclerView);
 
         ArrayList<CustomerOrderModel> list = new ArrayList<>();
         list.add(new CustomerOrderModel(R.drawable.kacchi_biryani, "250", "Kacchi Biryani", "k14788523"));
@@ -33,11 +37,33 @@ public class CustomerOrderActivity extends AppCompatActivity {
         list.add(new CustomerOrderModel(R.drawable.kacchi_biryani, "250", "Kacchi Biryani", "k14788523"));
         list.add(new CustomerOrderModel(R.drawable.kacchi_biryani, "250", "Kacchi Biryani", "k14788523"));
         list.add(new CustomerOrderModel(R.drawable.kacchi_biryani, "250", "Kacchi Biryani", "k14788523"));
-        CustomerOrderAdapter adapter = new CustomerOrderAdapter(list, this);
-        binding.orderedRecyclerView.setAdapter(adapter);
+        CustomerOrderAdapter adapter = new CustomerOrderAdapter(list, getContext());
+        recyclerView.setAdapter(adapter);
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        binding.orderedRecyclerView.setLayoutManager(layoutManager);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+       recyclerView.setLayoutManager(layoutManager);
+
+        return view;
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

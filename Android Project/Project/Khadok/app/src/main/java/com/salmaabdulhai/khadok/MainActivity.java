@@ -101,5 +101,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         getMenuInflater().inflate(R.menu.myorder_menu, menu);
         return super.onCreateOptionsMenu(menu);
    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.my_orders:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new CustomerOrderFragment()).commit();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
 
