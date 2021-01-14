@@ -14,6 +14,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.google.android.material.internal.NavigationMenuPresenter;
 import com.google.android.material.navigation.NavigationView;
 import com.salmaabdulhai.khadok.databinding.ActivityMainBinding;
 
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     ActivityMainBinding binding;
     private DrawerLayout drawer;
+   
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,6 +92,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         new chef_reg_Frag()).commit();
                 break;
 
+                case R.id.nav_myOrders:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new CustomerOrderFragment()).commit();
+                break;
+
 
         }
         drawer.closeDrawer(GravityCompat.START);
@@ -108,6 +115,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.my_orders:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new CustomerOrderFragment()).commit();
+               
+               NavigationView navigationView = findViewById(R.id.nav_view);
+                navigationView.setCheckedItem(R.id.nav_myOrders);
                 break;
         }
         return super.onOptionsItemSelected(item);
