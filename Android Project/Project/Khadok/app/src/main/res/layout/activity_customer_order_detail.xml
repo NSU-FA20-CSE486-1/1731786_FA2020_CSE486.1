@@ -122,7 +122,7 @@
             android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
             android:layout_weight="1"
-            android:text="TextView"
+            android:text="price"
             android:textColor="#ff0036" />
 
         <Button
@@ -131,6 +131,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
             android:background="@drawable/button_background"
+            android:backgroundTint="@color/red_500"
+            android:textColor="@color/white"
             android:text="@string/place_order"
             android:textStyle="bold" />
     </LinearLayout>

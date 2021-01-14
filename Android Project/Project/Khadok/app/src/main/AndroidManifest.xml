@@ -14,7 +14,6 @@
         <activity android:name=".ChefReg_Fragment" />
         <activity android:name=".LogIn" />
         <activity android:name=".RegistrationActivity" />
-        <activity android:name=".customer_order_detail" />
         <activity android:name=".CustomerOrderActivity" />
         <activity
             android:name=".googleAddressActivity"
