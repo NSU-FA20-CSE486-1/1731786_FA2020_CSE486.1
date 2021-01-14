@@ -2,6 +2,7 @@ package com.salmaabdulhai.khadok;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -95,5 +96,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
 
     }
+
+   public boolean onCreateOptionsMenu (Menu menu){
+        getMenuInflater().inflate(R.menu.myorder_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+   }
 }
 
