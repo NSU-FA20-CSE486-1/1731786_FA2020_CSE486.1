@@ -39,8 +39,10 @@ public class chef_dashboard extends Fragment{
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.chef_dashboard_frag, container,false);
         loadData();
+
         setHasOptionsMenu(true);
         recyclerView = view.findViewById(R.id.chefsFood);
+        recyclerView.setHasFixedSize(true);
         addFoodBtn = view.findViewById(R.id.dash_add_item);
         addFoodBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +61,7 @@ public class chef_dashboard extends Fragment{
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(foodItemAdapter);
+        //foodItemAdapter.notifyItemInserted(fooditemModelList.size());
 
 
 
@@ -68,6 +71,8 @@ public class chef_dashboard extends Fragment{
         return view;
 
     }
+
+
 
 
     private void loadData() {

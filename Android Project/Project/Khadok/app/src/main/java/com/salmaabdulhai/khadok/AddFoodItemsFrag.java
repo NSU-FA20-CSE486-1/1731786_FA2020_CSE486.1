@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.gson.Gson;
+import com.salmaabdulhai.khadok.Adapters.foodItemAdapter;
 import com.salmaabdulhai.khadok.Models.fooditemModel;
 
 import java.util.ArrayList;
@@ -52,6 +53,8 @@ public class AddFoodItemsFrag extends Fragment{
 
                 fooditemModel fooditemModel = new fooditemModel(foodname.getText().toString(), foodprice.getText().toString(), foodcategory.getText().toString(), fooddescription.getText().toString());
                 fooditemModelList.add(fooditemModel);
+                foodItemAdapter foodItemAdapter = new foodItemAdapter(fooditemModelList, getContext());
+                foodItemAdapter.notifyItemInserted(fooditemModelList.size());
                 save();
                 Fragment fragment = new Fragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();

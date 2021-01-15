@@ -26,6 +26,12 @@ public class foodItemAdapter extends RecyclerView.Adapter<foodItemAdapter.viewHo
         this.context = context;
     }
 
+    public void setTaskModelList(List<fooditemModel> list) {
+        this.list = list;
+
+    }
+
+
     @NonNull
     @Override
     public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -47,7 +53,7 @@ public class foodItemAdapter extends RecyclerView.Adapter<foodItemAdapter.viewHo
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return list != null ? list.size() : 0;
     }
 
     public class viewHolder extends RecyclerView.ViewHolder {
