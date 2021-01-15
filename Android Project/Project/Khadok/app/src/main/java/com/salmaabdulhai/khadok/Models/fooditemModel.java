@@ -6,8 +6,8 @@ public class fooditemModel {
     int addimage;
     String addname, addprice, foodcategory, adddescription;
 
-    public fooditemModel(int addimage, String addname, String addprice, String foodcategory, String adddescription) {
-        this.addimage = addimage;
+    public fooditemModel( String addname, String addprice, String foodcategory, String adddescription) {
+        //this.addimage = addimage;
         this.addname = addname;
         this.addprice = addprice;
         this.adddescription = adddescription;
@@ -15,13 +15,13 @@ public class fooditemModel {
     }
 
 
-    public int getAddimage() {
+    /*public int getAddimage() {
         return addimage;
     }
 
     public void setAddimage(int addimage) {
         this.addimage = addimage;
-    }
+    }*/
 
     public String getAddname() {
         return addname;

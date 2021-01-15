@@ -12,7 +12,6 @@
         android:layout_height="500dp"
         android:background="#3EE91E63"
         android:layout_marginBottom="20dp"
-        tools:listitem="@layout/sample_add_food_items"
         />
 
     <Button

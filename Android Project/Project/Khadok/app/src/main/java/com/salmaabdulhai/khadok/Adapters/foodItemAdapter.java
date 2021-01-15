@@ -10,19 +10,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.salmaabdulhai.khadok.Models.CustomerOrderModel;
 import com.salmaabdulhai.khadok.Models.fooditemModel;
 import com.salmaabdulhai.khadok.R;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class foodItemAdapter extends RecyclerView.Adapter<foodItemAdapter.viewHolder> {
 
 
-    ArrayList<fooditemModel> list;
+    List<fooditemModel> list;
     Context context;
 
-    public foodItemAdapter(ArrayList<fooditemModel> list, Context context) {
+    public foodItemAdapter(List<fooditemModel> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -31,15 +30,14 @@ public class foodItemAdapter extends RecyclerView.Adapter<foodItemAdapter.viewHo
     @Override
     public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(context).inflate(R.layout.chef_dashboard_frag, parent, false);
-
+        View view = LayoutInflater.from(context).inflate(R.layout.sample_add_food_items, parent, false);
         return new viewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull viewHolder holder, int position) {
         final fooditemModel model = list.get(position);
-        holder.addFoodImage.setImageResource(model.getAddimage());
+        //holder.addFoodImage.setImageResource(model.getAddimage());
         holder.addorderedPrice.setText(model.getAddprice());
         holder.addorderedFoodName.setText(model.getAddname());
         holder.adddescription.setText(model.getAdddescription());
@@ -60,7 +58,7 @@ public class foodItemAdapter extends RecyclerView.Adapter<foodItemAdapter.viewHo
         public viewHolder(@NonNull View itemView) {
             super(itemView);
 
-            addFoodImage = (ImageView) itemView.findViewById(R.id.addImageView);
+            //addFoodImage = (ImageView) itemView.findViewById(R.id.addImageView);
             addorderedPrice = (TextView) itemView.findViewById(R.id.addFoodPrice);
             adddescription = (TextView) itemView.findViewById(R.id.addDescription);
             addorderedFoodName = (TextView) itemView.findViewById(R.id.addFoodname);
