@@ -4,13 +4,14 @@ public class fooditemModel {
 
 
     int addimage;
-    String addname, addprice, adddescription;
+    String addname, addprice, foodcategory, adddescription;
 
-    public fooditemModel(int addimage, String addname, String addprice, String adddescription) {
+    public fooditemModel(int addimage, String addname, String addprice, String foodcategory, String adddescription) {
         this.addimage = addimage;
         this.addname = addname;
         this.addprice = addprice;
         this.adddescription = adddescription;
+        this.foodcategory = foodcategory;
     }
 
 
@@ -44,5 +45,14 @@ public class fooditemModel {
 
     public void setAdddescription(String adddescription) {
         this.adddescription = adddescription;
+    }
+
+
+    public String getFoodcategory() {
+        return foodcategory;
+    }
+
+    public void setFoodcategory(String foodcategory) {
+        this.foodcategory = foodcategory;
     }
 }
