@@ -1,0 +1,48 @@
+package com.salmaabdulhai.khadok.Models;
+
+public class fooditemModel {
+
+
+    int addimage;
+    String addname, addprice, adddescription;
+
+    public fooditemModel(int addimage, String addname, String addprice, String adddescription) {
+        this.addimage = addimage;
+        this.addname = addname;
+        this.addprice = addprice;
+        this.adddescription = adddescription;
+    }
+
+
+    public int getAddimage() {
+        return addimage;
+    }
+
+    public void setAddimage(int addimage) {
+        this.addimage = addimage;
+    }
+
+    public String getAddname() {
+        return addname;
+    }
+
+    public void setAddname(String addname) {
+        this.addname = addname;
+    }
+
+    public String getAddprice() {
+        return addprice;
+    }
+
+    public void setAddprice(String addprice) {
+        this.addprice = addprice;
+    }
+
+    public String getAdddescription() {
+        return adddescription;
+    }
+
+    public void setAdddescription(String adddescription) {
+        this.adddescription = adddescription;
+    }
+}
