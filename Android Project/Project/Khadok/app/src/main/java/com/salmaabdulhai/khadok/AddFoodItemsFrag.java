@@ -20,22 +20,23 @@ import com.salmaabdulhai.khadok.Models.FooditemModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddFoodItemsFrag extends Fragment{
+public class AddFoodItemsFrag extends Fragment {
 
-        EditText foodname, foodprice, foodcategory, fooddescription;
-        Button submitbtn, uploadimage;
+    EditText foodname, foodprice, foodcategory, fooddescription;
+    Button submitbtn, uploadimage;
     private List<FooditemModel> fooditemModelList;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.add_food_items_frag, container,false);
+        View view = inflater.inflate(R.layout.add_food_items_frag, container, false);
         setHasOptionsMenu(true);
 
         foodname = (EditText) view.findViewById(R.id.itemName);
         foodprice = (EditText) view.findViewById(R.id.itemPrice);
         foodcategory = (EditText) view.findViewById(R.id.FoodCategory);
         fooddescription = (EditText) view.findViewById(R.id.itemDetail);
-        submitbtn= (Button) view.findViewById(R.id.itemSubmitBtn);
+        submitbtn = (Button) view.findViewById(R.id.itemSubmitBtn);
 
         fooditemModelList = PrefConfig.readListFromPref(getContext());
 
@@ -46,7 +47,7 @@ public class AddFoodItemsFrag extends Fragment{
 
                 FooditemModel fooditemModel = new FooditemModel(foodname.getText().toString(), foodprice.getText().toString(), foodcategory.getText().toString(), fooddescription.getText().toString());
                 fooditemModelList.add(fooditemModel);
-                PrefConfig.writeListInPref(getContext(),fooditemModelList);
+                PrefConfig.writeListInPref(getContext(), fooditemModelList);
                 Fragment fragment = new Fragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

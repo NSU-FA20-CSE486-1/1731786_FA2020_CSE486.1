@@ -1,6 +1,7 @@
 package com.salmaabdulhai.khadok.Adapters;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,8 +51,14 @@ public class ChefOfferedFoodItemsAdapter extends RecyclerView.Adapter<ChefOffere
             @Override
             public void onClick(View v) {
                 AppCompatActivity activity = (AppCompatActivity) v.getContext();
-                Fragment myFragment = new Fragment();
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new OrderDetailFrag()).addToBackStack(null).commit();
+                OrderDetailFrag frag = new OrderDetailFrag();
+                Bundle bundle = new Bundle();
+                bundle.putInt("foodimage", model.getOfferedFoodImage());
+                bundle.putString("foodname", model.getOfferedFoodName());
+                bundle.putString("foodprice", model.getOfferedFoodPrice());
+                bundle.putString("fooddes", model.getOfferedFoodDescription());
+                frag.setArguments(bundle);
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, frag).commit();
             }
         });
 
