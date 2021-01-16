@@ -1,13 +1,13 @@
 package com.salmaabdulhai.khadok.Models;
 
-public class chefOfferedFoodItems {
+public class ChefOfferedFoodItems {
 
 
     // took image as int since image will be taken from the drawable folder
     int offeredFoodImage;
     String offeredFoodName, offeredFoodPrice, offeredFoodDescription;
 
-    public chefOfferedFoodItems(int offeredFoodImage, String offeredFoodName, String offeredFoodPrice, String offeredFoodDescription) {
+    public ChefOfferedFoodItems(int offeredFoodImage, String offeredFoodName, String offeredFoodPrice, String offeredFoodDescription) {
         this.offeredFoodImage = offeredFoodImage;
         this.offeredFoodName = offeredFoodName;
         this.offeredFoodPrice = offeredFoodPrice;

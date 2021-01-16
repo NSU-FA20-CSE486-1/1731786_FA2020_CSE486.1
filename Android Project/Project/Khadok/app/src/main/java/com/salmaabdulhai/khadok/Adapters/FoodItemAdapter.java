@@ -10,24 +10,25 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.salmaabdulhai.khadok.Models.fooditemModel;
+import com.salmaabdulhai.khadok.Models.FooditemModel;
 import com.salmaabdulhai.khadok.R;
 
 import java.util.List;
 
-public class foodItemAdapter extends RecyclerView.Adapter<foodItemAdapter.viewHolder> {
+public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.viewHolder> {
 
 
-    List<fooditemModel> list;
+    List<FooditemModel> list;
     Context context;
 
-    public foodItemAdapter(List<fooditemModel> list, Context context) {
+    public FoodItemAdapter(List<FooditemModel> list, Context context) {
         this.list = list;
         this.context = context;
     }
 
-    public void setTaskModelList(List<fooditemModel> list) {
+    public void setTaskModelList(List<FooditemModel> list) {
         this.list = list;
+        notifyDataSetChanged();
 
     }
 
@@ -42,7 +43,7 @@ public class foodItemAdapter extends RecyclerView.Adapter<foodItemAdapter.viewHo
 
     @Override
     public void onBindViewHolder(@NonNull viewHolder holder, int position) {
-        final fooditemModel model = list.get(position);
+        final FooditemModel model = list.get(position);
         //holder.addFoodImage.setImageResource(model.getAddimage());
         holder.addorderedPrice.setText(model.getAddprice());
         holder.addorderedFoodName.setText(model.getAddname());

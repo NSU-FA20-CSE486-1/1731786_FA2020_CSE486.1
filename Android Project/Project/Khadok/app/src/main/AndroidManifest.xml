@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Khadok">
-        <activity android:name=".chef_dashboard" />
+        <activity android:name=".Chef_dashboard" />
         <activity android:name=".AddFoodItemsFrag" />
         <activity android:name=".ChefReg_Fragment" />
         <activity android:name=".LogIn" />

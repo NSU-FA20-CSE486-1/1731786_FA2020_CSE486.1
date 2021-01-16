@@ -1,12 +1,12 @@
 package com.salmaabdulhai.khadok.Models;
 
-public class fooditemModel {
+public class FooditemModel {
 
 
     int addimage;
     String addname, addprice, foodcategory, adddescription;
 
-    public fooditemModel( String addname, String addprice, String foodcategory, String adddescription) {
+    public FooditemModel(String addname, String addprice, String foodcategory, String adddescription) {
         //this.addimage = addimage;
         this.addname = addname;
         this.addprice = addprice;

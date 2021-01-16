@@ -14,7 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-public class chef_reg_Frag extends Fragment {
+public class Chef_reg_Frag extends Fragment {
 
     Button signup_chef;
     @Nullable
@@ -30,7 +30,7 @@ public class chef_reg_Frag extends Fragment {
                 Fragment fragment = new Fragment();
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.fragment_container, new chef_dashboard());
+                fragmentTransaction.replace(R.id.fragment_container, new Chef_dashboard());
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }

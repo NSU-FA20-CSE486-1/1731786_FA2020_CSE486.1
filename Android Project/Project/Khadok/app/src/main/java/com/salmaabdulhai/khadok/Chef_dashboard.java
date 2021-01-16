@@ -1,14 +1,5 @@
 package com.salmaabdulhai.khadok;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -17,33 +8,57 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import com.salmaabdulhai.khadok.Adapters.CustomerOrderAdapter;
-import com.salmaabdulhai.khadok.Adapters.foodItemAdapter;
-import com.salmaabdulhai.khadok.Models.fooditemModel;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import java.lang.reflect.Type;
-import java.util.ArrayList;
+import com.salmaabdulhai.khadok.Adapters.FoodItemAdapter;
+import com.salmaabdulhai.khadok.AddFoodItemsFrag;
+import com.salmaabdulhai.khadok.Models.FooditemModel;
+import com.salmaabdulhai.khadok.PrefConfig;
+import com.salmaabdulhai.khadok.R;
+
 import java.util.List;
 
-import static android.content.Context.MODE_PRIVATE;
+import static java.security.AccessController.getContext;
 
-public class chef_dashboard extends Fragment{
+public class Chef_dashboard extends Fragment {
 
     Button addFoodBtn;
-    private List<fooditemModel> fooditemModelList;
+    private List<FooditemModel> fooditemModelList;
     RecyclerView recyclerView;
+    FoodItemAdapter foodItemAdapter;
+
     @Nullable
     @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        fooditemModelList = PrefConfig.readListFromPref(getContext());
+        foodItemAdapter = new FoodItemAdapter(fooditemModelList, getContext());
+        foodItemAdapter.setTaskModelList(fooditemModelList);
+    }
+
+    @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.chef_dashboard_frag, container,false);
-        loadData();
+        return inflater.inflate(R.layout.chef_dashboard_frag, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         setHasOptionsMenu(true);
+
         recyclerView = view.findViewById(R.id.chefsFood);
-        recyclerView.setHasFixedSize(true);
         addFoodBtn = view.findViewById(R.id.dash_add_item);
+
+        recyclerView.setHasFixedSize(true);
+
+
         addFoodBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,40 +72,19 @@ public class chef_dashboard extends Fragment{
         });
 
 
-        foodItemAdapter foodItemAdapter = new foodItemAdapter(fooditemModelList, getContext());
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
+        //      foodItemAdapter = new FoodItemAdapter(fooditemModelList, getContext());
         recyclerView.setAdapter(foodItemAdapter);
-        //foodItemAdapter.notifyItemInserted(fooditemModelList.size());
-
-
-
-
-
-
-        return view;
+        //   foodItemAdapter.notifyItemInserted(fooditemModelList.size());
 
     }
-
-
-
-
-    private void loadData() {
-        SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences("shared preferences", MODE_PRIVATE);
-        Gson gson = new Gson();
-        String json = sharedPreferences.getString("task list", null);
-        Type type = new TypeToken<ArrayList<fooditemModel>>() {}.getType();
-        fooditemModelList = gson.fromJson(json, type);
-        if (fooditemModelList == null) {
-            fooditemModelList = new ArrayList<>();
-        }
-    }
-
-
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
         menu.clear();
     }
+
 }

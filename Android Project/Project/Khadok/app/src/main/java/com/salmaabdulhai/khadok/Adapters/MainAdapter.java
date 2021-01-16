@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.salmaabdulhai.khadok.Models.MainModel;
 import com.salmaabdulhai.khadok.R;
-import com.salmaabdulhai.khadok.offered_food_items_fragment;
+import com.salmaabdulhai.khadok.Offered_food_items_fragment;
 
 import java.util.ArrayList;
 
@@ -50,7 +50,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.viewholder> {
             public void onClick(View v) {
                 AppCompatActivity activity = (AppCompatActivity) v.getContext();
                 Fragment myFragment = new Fragment();
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new offered_food_items_fragment()).addToBackStack(null).commit();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Offered_food_items_fragment()).addToBackStack(null).commit();
 
             }
         });

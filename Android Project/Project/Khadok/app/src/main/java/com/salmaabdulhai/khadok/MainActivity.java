@@ -14,7 +14,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.google.android.material.internal.NavigationMenuPresenter;
 import com.google.android.material.navigation.NavigationView;
 import com.salmaabdulhai.khadok.databinding.ActivityMainBinding;
 
@@ -89,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             case R.id.nav_profile:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new chef_reg_Frag()).commit();
+                        new Chef_reg_Frag()).commit();
                 break;
 
                 case R.id.nav_myOrders:

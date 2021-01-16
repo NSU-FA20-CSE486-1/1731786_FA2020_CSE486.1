@@ -7,8 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.salmaabdulhai.khadok.Models.MainModel;
-import com.salmaabdulhai.khadok.Models.chefOfferedFoodItems;
+import com.salmaabdulhai.khadok.Models.ChefOfferedFoodItems;
 import com.salmaabdulhai.khadok.R;
 
         import androidx.annotation.NonNull;
@@ -16,19 +15,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
-        import com.salmaabdulhai.khadok.Models.MainModel;
-        import com.salmaabdulhai.khadok.R;
-import com.salmaabdulhai.khadok.offered_food_items_fragment;
-import com.salmaabdulhai.khadok.orderDetailFrag;
+import com.salmaabdulhai.khadok.OrderDetailFrag;
 
 import java.util.ArrayList;
 
-public class chefOfferedFoodItemsAdapter extends RecyclerView.Adapter<chefOfferedFoodItemsAdapter.viewholder> {
+public class ChefOfferedFoodItemsAdapter extends RecyclerView.Adapter<ChefOfferedFoodItemsAdapter.viewholder> {
 
-    ArrayList<chefOfferedFoodItems> list;
+    ArrayList<ChefOfferedFoodItems> list;
     Context context;
 
-    public chefOfferedFoodItemsAdapter(ArrayList<chefOfferedFoodItems> list, Context context) {
+    public ChefOfferedFoodItemsAdapter(ArrayList<ChefOfferedFoodItems> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -45,7 +41,7 @@ public class chefOfferedFoodItemsAdapter extends RecyclerView.Adapter<chefOffere
     @Override
     public void onBindViewHolder(@NonNull viewholder holder, int position) {
         //data bind
-        final chefOfferedFoodItems model = list.get(position);
+        final ChefOfferedFoodItems model = list.get(position);
         holder.offfoodImage.setImageResource(model.getOfferedFoodImage());
         holder.offfoodName.setText(model.getOfferedFoodName());
         holder.offprice.setText(model.getOfferedFoodPrice());
@@ -55,7 +51,7 @@ public class chefOfferedFoodItemsAdapter extends RecyclerView.Adapter<chefOffere
             public void onClick(View v) {
                 AppCompatActivity activity = (AppCompatActivity) v.getContext();
                 Fragment myFragment = new Fragment();
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new orderDetailFrag()).addToBackStack(null).commit();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new OrderDetailFrag()).addToBackStack(null).commit();
             }
         });
 
