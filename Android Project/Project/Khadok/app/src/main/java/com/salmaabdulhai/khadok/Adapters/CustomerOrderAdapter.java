@@ -1,6 +1,8 @@
 package com.salmaabdulhai.khadok.Adapters;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,13 +50,31 @@ public class CustomerOrderAdapter extends RecyclerView.Adapter<CustomerOrderAdap
             @Override
             public boolean onLongClick(View v) {
                 DBHelper dbHelper = new DBHelper(context);
-                if(dbHelper.deleteOrder(model.getOrderNumber()) > 0){
+                new AlertDialog.Builder(context).setTitle("Delete")
+                        .setIcon(R.drawable.ic_remove).setMessage("Are you sure you want to delete this order?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dbHelper.deleteOrder(model.getOrderNumber());
+                            }
+                        }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        dialog.cancel();
+                    }
+                }).show();
+
+
+
+                
+                /*if(dbHelper.deleteOrder(model.getOrderNumber()) > 0){
                     Toast.makeText(context, "deleted", Toast.LENGTH_SHORT).show();
                 }
 
                 else {
                     Toast.makeText(context, "nooo", Toast.LENGTH_SHORT).show();
-                }
+                }*/
 
                 return false;
             }
