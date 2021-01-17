@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 
 public class DBHelper extends SQLiteOpenHelper {
     final static String DBNAME = "mydatabase.db";
-    final static int DBVERSION = 1;
+    final static int DBVERSION = 2;
 
 
 
@@ -22,7 +22,7 @@ public class DBHelper extends SQLiteOpenHelper {
         //SQL query
         sqLiteDatabase.execSQL(
                 "create table orders" +
-                        "(id int primary key autoincrement," +
+                        "(id integer primary key autoincrement," +
                         "price text," +
                         "image int, " +
                         "description text," +
