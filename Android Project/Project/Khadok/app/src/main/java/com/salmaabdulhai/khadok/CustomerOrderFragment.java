@@ -28,15 +28,11 @@ public class CustomerOrderFragment extends Fragment {
         View view = inflater.inflate(R.layout.customer_order_fragment, container,false);
         recyclerView = view.findViewById(R.id.orderedRecyclerView);
 
-        ArrayList<CustomerOrderModel> list = new ArrayList<>();
-        list.add(new CustomerOrderModel(R.drawable.kacchi_biryani, "250", "Kacchi Biryani", "k14788523"));
-        list.add(new CustomerOrderModel(R.drawable.kacchi_biryani, "250", "Kacchi Biryani", "k14788523"));
-        list.add(new CustomerOrderModel(R.drawable.kacchi_biryani, "250", "Kacchi Biryani", "k14788523"));
-        list.add(new CustomerOrderModel(R.drawable.kacchi_biryani, "250", "Kacchi Biryani", "k14788523"));
-        list.add(new CustomerOrderModel(R.drawable.kacchi_biryani, "250", "Kacchi Biryani", "k14788523"));
-        list.add(new CustomerOrderModel(R.drawable.kacchi_biryani, "250", "Kacchi Biryani", "k14788523"));
-        list.add(new CustomerOrderModel(R.drawable.kacchi_biryani, "250", "Kacchi Biryani", "k14788523"));
-        list.add(new CustomerOrderModel(R.drawable.kacchi_biryani, "250", "Kacchi Biryani", "k14788523"));
+
+        DBHelper helper = new DBHelper(getContext());
+        ArrayList<CustomerOrderModel> list = helper.getOrders();
+
+
         CustomerOrderAdapter adapter = new CustomerOrderAdapter(list, getContext());
         recyclerView.setAdapter(adapter);
 

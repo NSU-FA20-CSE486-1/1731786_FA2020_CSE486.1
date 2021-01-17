@@ -4,6 +4,9 @@ public class CustomerOrderModel {
 
     int orderedImage;
     String price, orderedFood, orderNumber;
+    public CustomerOrderModel(){
+
+    }
 
     public CustomerOrderModel(int orderedImage, String price, String orderedFood, String orderNumber) {
         this.orderedImage = orderedImage;
