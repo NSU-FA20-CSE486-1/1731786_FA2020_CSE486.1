@@ -6,10 +6,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.salmaabdulhai.khadok.DBHelper;
 import com.salmaabdulhai.khadok.Models.CustomerOrderModel;
 import com.salmaabdulhai.khadok.R;
 
@@ -42,6 +44,21 @@ public class CustomerOrderAdapter extends RecyclerView.Adapter<CustomerOrderAdap
         holder.orderedPrice.setText(model.getPrice());
         holder.orderedFoodName.setText(model.getOrderedFood());
         holder.orderedNumber.setText(model.getOrderNumber());
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                DBHelper dbHelper = new DBHelper(context);
+                if(dbHelper.deleteOrder(model.getOrderNumber()) > 0){
+                    Toast.makeText(context, "deleted", Toast.LENGTH_SHORT).show();
+                }
+
+                else {
+                    Toast.makeText(context, "nooo", Toast.LENGTH_SHORT).show();
+                }
+
+                return false;
+            }
+        });
 
     }
 

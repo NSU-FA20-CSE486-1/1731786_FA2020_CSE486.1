@@ -80,11 +80,11 @@ public class OrderDetailFrag extends Fragment {
                         bundle.getString("foodname")
                       );
                if(isInserted){
-                   Toast.makeText(getContext(), "Data Success", Toast.LENGTH_SHORT).show();}
+                   Toast.makeText(getContext(), "You have successfully placed the order", Toast.LENGTH_SHORT).show();}
 
 
                else {
-                   Toast.makeText(getContext(), "Error inserting order", Toast.LENGTH_SHORT).show();}
+                   Toast.makeText(getContext(), "Error placing the order. Try again!", Toast.LENGTH_SHORT).show();}
             }
         });
     }
