@@ -1,11 +1,14 @@
 package com.salmaabdulhai.khadok.Adapters;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -49,6 +52,29 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.viewHo
         holder.addorderedFoodName.setText(model.getAddname());
         holder.adddescription.setText(model.getAdddescription());
         holder.foodcategory.setText(model.getFoodcategory());
+        holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                new AlertDialog.Builder(context).setTitle("Delete")
+                        .setIcon(R.drawable.ic_remove).setMessage("Are you sure you want to delete this order?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                list.remove(position);
+                                notifyDataSetChanged();
+                                Toast.makeText(context, "item removed successfully!", Toast.LENGTH_SHORT).show();
+                            }
+                        }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        dialog.cancel();
+                    }
+                }).show();
+
+                return false;
+            }
+        });
 
     }
 
