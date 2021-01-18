@@ -56,6 +56,7 @@ public class CustomerOrderAdapter extends RecyclerView.Adapter<CustomerOrderAdap
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 dbHelper.deleteOrder(model.getOrderNumber());
+                                Toast.makeText(context, "Your order has been removed1", Toast.LENGTH_SHORT).show();
                             }
                         }).setNegativeButton("No", new DialogInterface.OnClickListener() {
                     @Override

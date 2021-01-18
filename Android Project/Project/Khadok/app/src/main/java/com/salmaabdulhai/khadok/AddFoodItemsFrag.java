@@ -14,7 +14,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.salmaabdulhai.khadok.Adapters.FoodItemAdapter;
 import com.salmaabdulhai.khadok.Models.FooditemModel;
 
 import java.util.ArrayList;
@@ -23,13 +25,88 @@ import java.util.List;
 public class AddFoodItemsFrag extends Fragment {
 
     EditText foodname, foodprice, foodcategory, fooddescription;
-    Button submitbtn, uploadimage;
+    Button submitbtn, uploadimage, updatebtn;
     private List<FooditemModel> fooditemModelList;
+    FoodItemAdapter foodItemAdapter;
+    FooditemModel fooditemModel;
+
+
+
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        foodItemAdapter = new FoodItemAdapter(fooditemModelList, getContext());
+        foodItemAdapter.setTaskModelList(fooditemModelList);
+        fooditemModelList = PrefConfig.readListFromPref(getContext());
+
+    }
+
+
+
+
+
+
+    private Bundle bundle;
+
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        this.bundle = getArguments();
+        if (bundle != null) {
+            final String foodnamed = bundle.getString("itemname");
+            final String foodpriced = bundle.getString("itemprice");
+            final String fooddesd = bundle.getString("itemdescription");
+            final String foodCategoryd = bundle.getString("category");
+            final int position = bundle.getInt("pos");
+
+
+            foodname.setText(foodnamed);
+            foodprice.setText(foodpriced);
+            foodcategory.setText(foodCategoryd);
+            fooddescription.setText(fooddesd);
+        }
+        //else Toast.makeText(getContext(), "ggggg", Toast.LENGTH_SHORT).show();
+
+        updatebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                    fooditemModel = new FooditemModel(foodname.getText().toString(),
+                            foodprice.getText().toString(), foodcategory.getText().toString(), fooddescription.getText().toString());
+                    fooditemModelList.set(bundle.getInt("pos"), fooditemModel);
+                    foodItemAdapter.notifyDataSetChanged();
+                    PrefConfig.writeListInPref(getContext(), fooditemModelList);
+                    Fragment fragment = new Fragment();
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, new Chef_dashboard());
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+
+
+
+                }
+
+
+
+        });
+
+
+    }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.add_food_items_frag, container, false);
+
+        return view;
+    }
+
+
+
+
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         setHasOptionsMenu(true);
 
         foodname = (EditText) view.findViewById(R.id.itemName);
@@ -37,6 +114,7 @@ public class AddFoodItemsFrag extends Fragment {
         foodcategory = (EditText) view.findViewById(R.id.FoodCategory);
         fooddescription = (EditText) view.findViewById(R.id.itemDetail);
         submitbtn = (Button) view.findViewById(R.id.itemSubmitBtn);
+        updatebtn = (Button) view.findViewById(R.id.update);
 
         fooditemModelList = PrefConfig.readListFromPref(getContext());
 
@@ -56,8 +134,14 @@ public class AddFoodItemsFrag extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-        return view;
+
+
+
+
     }
+
+
+
 
     /*private void save() {
 

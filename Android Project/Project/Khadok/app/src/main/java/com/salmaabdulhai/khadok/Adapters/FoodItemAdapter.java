@@ -3,6 +3,7 @@ package com.salmaabdulhai.khadok.Adapters;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +12,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.salmaabdulhai.khadok.AddFoodItemsFrag;
 import com.salmaabdulhai.khadok.Models.FooditemModel;
 import com.salmaabdulhai.khadok.PrefConfig;
 import com.salmaabdulhai.khadok.R;
@@ -53,6 +56,23 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.viewHo
         holder.addorderedFoodName.setText(model.getAddname());
         holder.adddescription.setText(model.getAdddescription());
         holder.foodcategory.setText(model.getFoodcategory());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                AppCompatActivity activity = (AppCompatActivity) v.getContext();
+                AddFoodItemsFrag fragment = new AddFoodItemsFrag();
+                Bundle bundle = new Bundle();
+                bundle.putString("itemname", model.getAddname());
+                bundle.putString("itemprice", model.getAddprice());
+                bundle.putString("itemdescription", model.getAdddescription());
+                bundle.putString("category", model.getFoodcategory());
+                bundle.putInt("pos", position);
+                fragment.setArguments(bundle);
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).addToBackStack(null).commit();
+            }
+        });
+
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {

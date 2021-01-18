@@ -11,7 +11,7 @@
     <EditText
         android:id="@+id/itemName"
         android:layout_width="match_parent"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:textColor="@color/black"
@@ -22,35 +22,35 @@
     <EditText
         android:id="@+id/itemDetail"
         android:layout_width="match_parent"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:textColor="@color/black"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Item Detail"
         android:layout_below="@+id/itemName"
-        android:inputType="textPassword" />
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/FoodCategory"
         android:layout_width="match_parent"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:textColor="@color/black"
         android:hint="Food Category"
         android:layout_below="@+id/itemDetail"
-        android:inputType="textPassword" />
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/itemPrice"
         android:layout_width="match_parent"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:textColor="@color/black"
         android:hint="Price"
         android:layout_below="@+id/FoodCategory"
-        android:inputType="textPassword" />
+        android:inputType="textPersonName" />
 
 
     <ImageView
@@ -72,7 +72,7 @@
         android:backgroundTint="@color/red_500"
         android:textColor="@color/white"
         android:textStyle="bold"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
         android:text="@string/upload_image" />
 
     <Button
@@ -81,11 +81,23 @@
         android:layout_below="@+id/uploadItemImage"
         android:layout_centerInParent="true"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:textStyle="bold"
         android:backgroundTint="@color/red_500"
         android:textColor="@color/white"
         android:text="@string/submit" />
+
+    <Button
+        android:id="@+id/update"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/itemSubmitBtn"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/red_500"
+        android:textColor="@color/white"
+        android:text="@string/Update" />
 
 
 </RelativeLayout>
