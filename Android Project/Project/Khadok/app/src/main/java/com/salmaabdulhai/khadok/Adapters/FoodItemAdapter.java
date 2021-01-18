@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.salmaabdulhai.khadok.Models.FooditemModel;
+import com.salmaabdulhai.khadok.PrefConfig;
 import com.salmaabdulhai.khadok.R;
 
 import java.util.List;
@@ -61,6 +62,7 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.viewHo
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 list.remove(position);
+                                PrefConfig.writeListInPref(context, list);
                                 notifyDataSetChanged();
                                 Toast.makeText(context, "item removed successfully!", Toast.LENGTH_SHORT).show();
                             }
