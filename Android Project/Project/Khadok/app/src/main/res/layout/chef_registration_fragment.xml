@@ -20,6 +20,18 @@
         />
 
     <EditText
+        android:id="@+id/bio"
+        android:layout_width="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_below="@+id/outlet"
+        android:textColor="@color/black"
+        android:hint="Bio"
+        android:inputType="textPersonName"
+        />
+
+    <EditText
         android:id="@+id/ChefMobile"
         android:layout_width="match_parent"
         android:layout_marginTop="50dp"
@@ -27,8 +39,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Mobile Number"
-        android:layout_below="@+id/outlet"
-        android:inputType="textPassword" />
+        android:layout_below="@+id/bio"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/ChefPass"

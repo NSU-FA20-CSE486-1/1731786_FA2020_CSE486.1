@@ -7,6 +7,10 @@ public class MainModel {
     int image;
     String name, price, description;
 
+    public MainModel() {
+
+    }
+
     public MainModel(int image, String name, String description) {
         this.image = image;
         this.name = name;

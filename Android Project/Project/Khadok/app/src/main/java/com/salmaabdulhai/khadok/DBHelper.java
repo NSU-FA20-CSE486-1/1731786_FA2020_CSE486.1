@@ -9,12 +9,13 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 import com.salmaabdulhai.khadok.Models.CustomerOrderModel;
+import com.salmaabdulhai.khadok.Models.MainModel;
 
 import java.util.ArrayList;
 
 public class DBHelper extends SQLiteOpenHelper {
     final static String DBNAME = "mydatabase.db";
-    final static int DBVERSION = 3;
+    final static int DBVERSION = 4;
 
 
 
@@ -34,6 +35,15 @@ public class DBHelper extends SQLiteOpenHelper {
                         "foodname text)"
         );
 
+
+        sqLiteDatabase.execSQL(
+                "create table chef " +
+                        "(bio text, " +
+                        "outletName text  primary key)"
+
+
+        );
+
     }
 
 
@@ -41,6 +51,7 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP table if exists orders");
+        sqLiteDatabase.execSQL("DROP table if exists chef");
         onCreate(sqLiteDatabase);
     }
 
@@ -97,4 +108,54 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         return sqLiteDatabase.delete("orders", "id="+id, null);
     }
+
+
+
+    public boolean insertChef ( String OutletName, String bio){
+
+        SQLiteDatabase database = getReadableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("outletname", OutletName);
+        values.put("bio", bio);
+        long id = database.insert("chef", null,values);
+        if(id <=0) {return false;}
+        else {return true;}
+    }
+
+
+
+    public ArrayList<MainModel> getchef (){
+        ArrayList<MainModel> chef = new ArrayList<>();
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+
+
+        Cursor cursor = sqLiteDatabase.rawQuery("Select  OutletName, bio from orders ",null);
+        if(cursor.moveToFirst()) {
+            while (cursor.moveToNext()){
+                MainModel mainModel = new MainModel();
+                mainModel.setName(cursor.getInt(0 )+ "");
+                mainModel.setDescription(cursor.getString(1));
+                chef.add(mainModel);
+
+
+            }
+        }
+        //to prevent it from memory leakage
+        cursor.close();
+        sqLiteDatabase.close();
+        return chef;
+
+
+
+    }
+
+
+
+
 }
+
+
+
+
+
+

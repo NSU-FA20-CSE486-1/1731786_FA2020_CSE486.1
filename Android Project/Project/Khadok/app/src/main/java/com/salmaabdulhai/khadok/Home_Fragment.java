@@ -32,6 +32,7 @@ public class Home_Fragment extends Fragment {
         list.add(new MainModel(R.drawable.shrimp_salad, "Food Heaven",  "with magic white sauce and fries as free side dishes!"));
         list.add(new MainModel(R.drawable.kacchi_biryani, "Shimla Mirch",  "Get lost with flavors!"));
         list.add(new MainModel(R.drawable.noodles, "Food Bursts", "Can't think of any more bio!"));
+
         MainAdapter adapter = new MainAdapter(list, getContext());
         recyclerView.setAdapter(adapter);
 

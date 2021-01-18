@@ -25,6 +25,7 @@ public class RegistrationActivity extends AppCompatActivity {
         regBtn = (Button) findViewById(R.id.signup_btn);
 
 
+
         regBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
