@@ -79,25 +79,31 @@ enjoy the food in the comfort of your home- sweet-home, the choice is yours!
 
 2 **Features**
 
-v **Customer**
+ **Customer**
 
 o
 
 Simple Login and Registration
 
+![](ProjectScreenshots/Screenshot_20210120-002843.png)
 
+![](ProjectScreenshots/Screenshot_20210120-002916.png)
 
 
 
 o Customer’s Dashboard: Explore chefs and their offered food items
 
+![](ProjectScreenshots/Screenshot_20210120-002924.png)
 
+![](ProjectScreenshots/Screenshot_20210120-003000.png)
 
 
 
 o Place order in just a click
 
+![](ProjectScreenshots/Screenshot_20210120-003007.png)
 
+![](ProjectScreenshots/Screenshot_20210120-003016.png)
 
 
 
@@ -105,23 +111,27 @@ o Review Orders in the order menu item or simply, press the icon on top-
 
 right
 
+![](ProjectScreenshots/Screenshot_20210120-003023.png)
 
+![](ProjectScreenshots/Screenshot_20210120-003029.png)
 
 
 
 o Delete order
 
 
+![](ProjectScreenshots/Screenshot_20210120-003039.png)
 
 
 
 o Apply as chef: You can now be both a user and a chef!
 
 
+![](ProjectScreenshots/Screenshot_20210120-003055.png)
 
 
 
-v **Chef**
+ **Chef**
 
 o
 
@@ -130,7 +140,11 @@ Simple registration
 
 
 
+![](ProjectScreenshots/Screenshot_20210120-003114.png)
 
+![](ProjectScreenshots/Screenshot_20210120-003119.png)
+
+![](ProjectScreenshots/Screenshot_20210120-003303.png)
 
 
 
@@ -142,7 +156,15 @@ Simple registration
 o Add food items
 
 
+![](ProjectScreenshots/Screenshot_20210120-003310.png)
 
+![](ProjectScreenshots/Screenshot_20210120-003317.png)
+
+![](ProjectScreenshots/Screenshot_20210120-003419.png)
+
+![](ProjectScreenshots/Screenshot_20210120-003426.png)
+
+![](ProjectScreenshots/Screenshot_20210120-003459.png)
 
 
 
@@ -166,7 +188,17 @@ o Update food items
 
 
 
+![](ProjectScreenshots/Screenshot_20210120-003504.png)
 
+
+
+![](ProjectScreenshots/Screenshot_20210120-003511.png)
+
+
+
+![](ProjectScreenshots/Screenshot_20210120-003520.png)
+
+![](ProjectScreenshots/Screenshot_20210120-003528.png)
 
 
 
@@ -179,6 +211,15 @@ o Delete offered food items
 
 
 
+![](ProjectScreenshots/Screenshot_20210120-003535.png)
+
+![](ProjectScreenshots/Screenshot_20210120-003541.png)
+
+![](ProjectScreenshots/Screenshot_20210120-003554.png)
+
+![](ProjectScreenshots/Screenshot_20210120-003602.png)
+
+         
 
 
 
@@ -192,14 +233,17 @@ o Delete offered food items
 
 
 
-
-v **Local Language**
+  **Local Language**
 
 Explore app in Bangla language
 
 o
 
+![](ProjectScreenshots/Screenshot_২০২১০১২০-০১১১০৭.png)
 
+![](ProjectScreenshots/Screenshot_২০২১০১২০-০১১১১৫.png)
+
+![](ProjectScreenshots/Screenshot_২০২১০১২০-০১১১২৩.png)
 
 
 
